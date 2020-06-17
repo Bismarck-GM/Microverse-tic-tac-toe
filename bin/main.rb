@@ -1,3 +1,52 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-puts 'Hello world!'
+puts 'Welcome to Tic-Tac-Toe.'
+
+puts 'Instructions: Tic-Tac-Toe is a game where you win if you complete a three line (vertical, horizontal or diagonal) of your sign'
+
+puts 'The game is displayed on a 1-9 grid (top-to-bottom left-to-right).'
+
+player_one = ''
+
+loop do
+  puts 'Player 1 choose your Symbol between X and O:'
+  player_one = gets.chomp.upcase
+  break if player_one == 'X' || player_one == 'O'
+end
+
+player_two = if player_one == 'X'
+  'O'
+else
+  'X'
+end
+
+puts "Player one is: \"#{player_one}\". Player two is: \"#{player_two}\""
+
+counter = 0
+
+loop do
+
+  puts 'Player one. Is your turn. Please make a move (1-9):'
+
+  player_one_selection = gets.chomp.to_i
+
+  if player_one_selection >= 1 && player_one_selection <= 9
+    puts "#{player_one} moves to #{player_one_selection}"
+  else
+    puts "Invalid move."
+  end
+  counter += 1
+  break if counter == 9
+  puts 'Player two. Is your turn. Please make a move (1-9):'
+
+  player_two_selection = gets.chomp.to_i
+
+  if player_two_selection >= 1 && player_two_selection <= 9
+    puts "#{player_two} moves to #{player_two_selection}"
+  else
+    puts 'Invalid move.'
+  end
+
+  counter += 1
+end
