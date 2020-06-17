@@ -33,7 +33,7 @@ loop do
 
   board.draw
   counter += 1
-  winner = judge.is_winner?(board, player_one) ? 'player one' : nil
+  winner = judge.winner?(board, player_one) ? 'player one' : nil
   break if counter == 9 || !winner.nil?
 
   puts 'Player Two. Is your turn. Please make a move (1-9):'
@@ -41,7 +41,7 @@ loop do
 
   board.draw
   counter += 1
-  winner = judge.is_winner?(board, player_two) ? 'player one' : nil
+  winner = judge.winner?(board, player_two) ? 'player one' : nil
   break unless winner.nil?
 end
 
