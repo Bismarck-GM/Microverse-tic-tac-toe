@@ -7,9 +7,9 @@ class Player
 
   def make_move(move, board)
     is_valid = board.check_valid(move)
-    if is_valid
-      board.update_board(@symbol, move)
-    end
+
+    board.update_board(@symbol, move) if is_valid
+
     is_valid
   end
 end

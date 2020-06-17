@@ -18,7 +18,3 @@ class Board
     puts "#{@cells[6]} #{@cells[7]} #{@cells[8]}"
   end
 end
-
-# board = Board.new
-
-# p board.check_valid(5)
