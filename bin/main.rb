@@ -31,20 +31,18 @@ loop do
   puts 'Player One. Is your turn. Please make a move (1-9):'
   puts 'Invalid selection or occupied space' until player_one.make_move(gets.chomp.to_i, board)
 
-  counter += 1
   board.draw
+  counter += 1
   winner = judge.is_winner?(board, player_one) ? 'player one' : nil
   break if counter == 9 || !winner.nil?
 
   puts 'Player Two. Is your turn. Please make a move (1-9):'
   puts 'Invalid selection or occupied space' until player_two.make_move(gets.chomp.to_i, board)
-  counter += 1
+
   board.draw
+  counter += 1
   winner = judge.is_winner?(board, player_two) ? 'player one' : nil
+  break unless winner.nil?
 end
 
-if counter == 9
-  puts "It's a draw"
-else
-  puts winner
-end
+puts counter == 9 ? "It's a draw" : "#{winner} wins!!!"
