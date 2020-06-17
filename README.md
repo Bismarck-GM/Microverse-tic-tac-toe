@@ -12,10 +12,7 @@ There are some set of rules that you have to follow in order to play the game
 - This game should be played with two players or you can act as both player
 - Every turns you have to choose the number from 1 to 9 according to the board
 - The first player pick wich symbol he/she want to use between 'X' and 'O'
-- The first person that matches the correct pattern wins the game
-
-The Board will appear like this in the starting of the game and ask you to choose the number from the board
-![Tic tac game](https://us.123rf.com/450wm/barbulat/barbulat1712/barbulat171200060/92203935-stock-vector-noughts-and-crosses-or-tic-tac-toe-game-vector-illustration-.jpg?ver=6)
+- The first person that matches the same pattern in a row, column or diagonal wins the game
 
 ### At any Time you can stop the game by using `Ctr+C`
 
