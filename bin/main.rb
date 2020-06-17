@@ -16,9 +16,9 @@ loop do
 end
 
 player_two = if player_one == 'X'
-  'O'
-else
-  'X'
+               'O'
+             else
+               'X'
 end
 
 puts "Player one is: \"#{player_one}\". Player two is: \"#{player_two}\""
@@ -26,7 +26,6 @@ puts "Player one is: \"#{player_one}\". Player two is: \"#{player_two}\""
 counter = 0
 
 loop do
-
   puts 'Player one. Is your turn. Please make a move (1-9):'
 
   player_one_selection = gets.chomp.to_i
@@ -34,10 +33,11 @@ loop do
   if player_one_selection >= 1 && player_one_selection <= 9
     puts "#{player_one} moves to #{player_one_selection}"
   else
-    puts "Invalid move."
+    puts 'Invalid move.'
   end
   counter += 1
   break if counter == 9
+
   puts 'Player two. Is your turn. Please make a move (1-9):'
 
   player_two_selection = gets.chomp.to_i
