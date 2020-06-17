@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
-puts "Hello world!"
+# frozen_string_literal: true
+
+puts 'Hello world!'
