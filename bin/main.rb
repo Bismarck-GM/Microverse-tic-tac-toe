@@ -27,11 +27,14 @@ loop do
 
   player_one_selection = gets.chomp.to_i
 
-  if player_one_selection >= 1 && player_one_selection <= 9
+  if player_one_selection >= 1 && player_one_selection <= 9 # && Board.cell[player_one_position-1].is_a?(Integer)
     puts "#{player_one} moves to #{player_one_selection}"
   else
-    puts 'Invalid move.'
+    puts 'Invalid move.' # Checks if the move is valid. If not it iterate again and puts 'Invalid move'.
   end
+  # winner = judge.winner?(board, player_one) ? 'player one' : nil
+  # Display the new board with the movement.
+
   counter += 1
   break if counter == 9
 
@@ -39,11 +42,15 @@ loop do
 
   player_two_selection = gets.chomp.to_i
 
-  if player_two_selection >= 1 && player_two_selection <= 9
+  if player_two_selection >= 1 && player_two_selection <= 9 # && Board.cell[player_two_position-1].is_a?(Integer)
     puts "#{player_two} moves to #{player_two_selection}"
   else
-    puts 'Invalid move.'
+    puts 'Invalid move.' # Checks if the move is valid. If not it iterate again and puts 'Invalid move'.
   end
+  # winner = judge.winner?(board, player_two) ? 'player two' : nil
+  # Display the new board with the movement.
 
   counter += 1
 end
+
+# Display who won or if it was a tie.
