@@ -41,7 +41,7 @@ loop do
 
   board.draw
   counter += 1
-  winner = judge.winner?(board, player_two) ? 'player one' : nil
+  winner = judge.winner?(board, player_two) ? 'player two' : nil
   break unless winner.nil?
 end
 
