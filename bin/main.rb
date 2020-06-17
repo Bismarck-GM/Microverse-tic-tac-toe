@@ -1,26 +1,6 @@
 #!/usr/bin/env ruby
-require './lib/Player'
-
-class Player
-  def initialize(symbol)
-    @symbol = symbol
-    @moves = []
-  end
-
-  def make_move(move)
-    # check if move is valid
-    if [1..9].include?(move)
-      # store the users move
-      @moves.push(move)
-      # store on the board
-      # want to update the board to display the players symbol
-
-      true
-    else
-      false
-    end
-  end
-end
+require './lib/player.rb'
+require './lib/board.rb'
 
 puts 'Welcome to Tic-Tac-Toe.'
 
@@ -34,19 +14,34 @@ loop do
   break if %w[X O].include?(player_one)
 end
 
-player_two = if player_one == 'X'
-               'O'
-             else
-               'X'
-             end
-
+player_two = player_one == 'X' ? 'O' : 'X'
+              
 player_one = Player.new(player_one)
 player_two = Player.new(player_two)
 
 puts "Player one is: #{player_one.symbol} and Player two is: #{player_two.symbol}"
 
+counter = 0
+board = Board.new
 
+loop do
+  puts 'Player One. Is your turn. Please make a move (1-9):'
+  until player_one.make_move(gets.chomp.to_i, board) do
+    puts 'Invalid selection or occupied space'
+  end
 
+  counter += 1
+  board.draw
+  break if counter == 9
+  
+  puts 'Player Two. Is your turn. Please make a move (1-9):'
+  until player_two.make_move(gets.chomp.to_i, board) do
+    puts 'Invalid selection or occupied space'
+  end
+  counter += 1
+  board.draw
+
+end
 # counter = 0
 
 # loop do

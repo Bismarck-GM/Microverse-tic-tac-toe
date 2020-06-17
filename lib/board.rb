@@ -1,15 +1,11 @@
 class Board
   attr_accessor :cells
   def initialize
-    @cells = Array.new(9)
+    @cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
-  def check_valid(symbol, move_command)
-    if [1..9].include?(move_command) && @cells[move_command - 1] == nil    
-      true
-    else
-      false
-    end
+  def check_valid(move_command)
+    @cells.include?(move_command) ? true : false
   end
 
   def update_board(symbol, move_command)
@@ -22,3 +18,7 @@ class Board
     puts "#{@cells[6]} #{@cells[7]} #{@cells[8]}"
   end
 end
+
+# board = Board.new
+
+# p board.check_valid(5)

@@ -5,17 +5,11 @@ class Player
     @moves = []
   end
 
-  def make_move(move)
-    # check if move is valid
-    if [1..9].include?(move)
-      # store the users move
-      @moves.push(move)
-      # store on the board
-      # want to update the board to display the players symbol
-
-      true
-    else
-      false
+  def make_move(move, board)
+    is_valid = board.check_valid(move)
+    if is_valid
+      board.update_board(@symbol, move)
     end
+    is_valid
   end
 end
