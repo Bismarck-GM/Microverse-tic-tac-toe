@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# require './lib/Player'
+require './lib/Player'
 
 class Player
   def initialize(symbol)
@@ -43,7 +43,9 @@ player_two = if player_one == 'X'
 player_one = Player.new(player_one)
 player_two = Player.new(player_two)
 
-puts "Player one is: #{player_one(symbol)}"
+puts "Player one is: #{player_one.symbol} and Player two is: #{player_two.symbol}"
+
+
 
 # counter = 0
 
