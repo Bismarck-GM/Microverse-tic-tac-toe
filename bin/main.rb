@@ -25,25 +25,15 @@ loop do
   puts "#{board_cells[6]} #{board_cells[7]} #{board_cells[8]}"
 
   puts 'Player one. Is your turn. Please make a move (1-9):'
-
-  player_one_selection = gets.chomp.to_i
-
-  if board_cells.include?(player_one_selection)
-    puts "#{player_one} moves to #{player_one_selection}"
-  else
-    puts 'Invalid move. Position already taken or outside range, Choose again'
-  end
+  puts 'Invalid selection or occupied space' until board_cells.include?(player_one_selection = gets.chomp.to_i)
+  puts "#{player_one} moves to #{player_one_selection}"
 
   counter += 1
   break if counter == 9
 
-  player_two_selection = gets.chomp.to_i
-
-  if board_cells.include?(player_two_selection)
-    puts "#{player_two} moves to #{player_two_selection}"
-  else
-    puts 'Invalid move. Position already taken or outside range, Choose again'
-  end
+  puts 'Player two. Is your turn. Please make a move (1-9):'
+  puts 'Invalid selection or occupied space' until board_cells.include?(player_two_selection = gets.chomp.to_i)
+  puts "#{player_two} moves to #{player_two_selection}"
 
   counter += 1
 end
