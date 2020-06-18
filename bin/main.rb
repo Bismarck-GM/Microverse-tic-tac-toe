@@ -1,7 +1,4 @@
 #!/usr/bin/env ruby
-require './lib/player.rb'
-require './lib/board.rb'
-require './lib/the_judge.rb'
 
 puts 'Welcome to Tic-Tac-Toe.'
 
@@ -17,32 +14,25 @@ end
 
 player_two = player_one == 'X' ? 'O' : 'X'
 
-player_one = Player.new(player_one)
-player_two = Player.new(player_two)
+puts "Player one is: #{player_one} and Player two is: #{player_two}"
 
-puts "Player one is: #{player_one.symbol} and Player two is: #{player_two.symbol}"
-
+board_cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 counter = 0
-board = Board.new
-judge = Judge.new
-winner = nil
+current_player = player_one
 
 loop do
-  puts 'Player One. Is your turn. Please make a move (1-9):'
-  puts 'Invalid selection or occupied space' until player_one.make_move(gets.chomp.to_i, board)
+  puts "#{board_cells[0]} #{board_cells[1]} #{board_cells[2]}"
+  puts "#{board_cells[3]} #{board_cells[4]} #{board_cells[5]}"
+  puts "#{board_cells[6]} #{board_cells[7]} #{board_cells[8]}"
 
-  board.draw
+  puts "#{current_player}. Is your turn. Please make a move (1-9):"
+  puts 'Invalid selection or occupied space' until board_cells.include?(current_player_selection = gets.chomp.to_i)
+  puts "#{current_player} moves to #{current_player_selection}"
+
   counter += 1
-  winner = judge.winner?(board, player_one) ? 'player one' : nil
-  break if counter == 9 || !winner.nil?
+  current_player = current_player == player_one ? player_two : player_one
 
-  puts 'Player Two. Is your turn. Please make a move (1-9):'
-  puts 'Invalid selection or occupied space' until player_two.make_move(gets.chomp.to_i, board)
-
-  board.draw
-  counter += 1
-  winner = judge.winner?(board, player_two) ? 'player two' : nil
-  break unless winner.nil?
+  break if counter == 9 || current_player.winner?
 end
 
-puts counter == 9 ? "It's a draw" : "#{winner} wins!!!"
+puts 'Player 1 wins'
