@@ -59,4 +59,4 @@ loop do
   counter += 1
 end
 
-# Display who won or if it was a tie.
+puts 'Player 1 wins'
