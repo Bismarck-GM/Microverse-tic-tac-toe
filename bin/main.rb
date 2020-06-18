@@ -47,4 +47,4 @@ loop do
   break unless winner.nil?
 end
 
-puts counter == 9 ? "It's a draw" : "#{winner} wins!!!"
+puts winner.nil? ? "It's a draw" : "#{winner} wins!!!"
