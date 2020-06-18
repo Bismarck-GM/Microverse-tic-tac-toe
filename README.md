@@ -51,7 +51,7 @@ To get a local copy up and running follow these simple example steps.
 
 - Github: [@githubhandle](https://github.com/githubhandle)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Linkedin: [linkedin](https://linkedin.com/linkedinhandles)
 
 ## 🤝 Contributing
 
