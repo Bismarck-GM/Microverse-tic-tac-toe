@@ -1,7 +1,4 @@
 #!/usr/bin/env ruby
-require './lib/player.rb'
-require './lib/board.rb'
-require './lib/the_judge.rb'
 
 puts 'Welcome to Tic-Tac-Toe.'
 
@@ -17,17 +14,10 @@ end
 
 player_two = player_one == 'X' ? 'O' : 'X'
 
-player_one = Player.new(player_one)
-player_two = Player.new(player_two)
-
-puts "Player one is: #{player_one.symbol} and Player two is: #{player_two.symbol}"
-
-counter = 0
-board = Board.new
-judge = Judge.new
-winner = nil
+puts "Player one is: #{player_one} and Player two is: #{player_two}"
 
 board_cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+counter = 0
 
 loop do
   puts "#{board_cells[0]} #{board_cells[1]} #{board_cells[2]}"
@@ -43,9 +33,9 @@ loop do
   else
     puts 'Invalid move. Position already taken or outside range, Choose again'
   end
-  # winner = judge.winner?(board, player_one) ? 'player one' : nil
-  # Display the new board with the movement.
 
+  counter += 1
+  break if counter == 9
 
   player_two_selection = gets.chomp.to_i
 
@@ -54,9 +44,8 @@ loop do
   else
     puts 'Invalid move. Position already taken or outside range, Choose again'
   end
-  # winner = judge.winner?(board, player_two) ? 'player two' : nil
-  # Display the new board with the movement.
 
+  counter += 1
 end
 
 puts 'Player 1 wins'
