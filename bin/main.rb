@@ -1,4 +1,13 @@
 #!/usr/bin/env ruby
+require './lib/player.rb'
+require './lib/board.rb'
+require './lib/the_judge.rb'
+
+def draw(board)
+  puts "#{board.cells[0]} #{board.cells[1]} #{board.cells[2]}"
+  puts "#{board.cells[3]} #{board.cells[4]} #{board.cells[5]}"
+  puts "#{board.cells[6]} #{board.cells[7]} #{board.cells[8]}"
+end
 
 puts 'Welcome to Tic-Tac-Toe.'
 
@@ -14,25 +23,34 @@ end
 
 player_two = player_one == 'X' ? 'O' : 'X'
 
-puts "Player one is: #{player_one} and Player two is: #{player_two}"
+player_one = Player.new(player_one)
+player_two = Player.new(player_two)
 
-board_cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+puts "Player one is: #{player_one.symbol} and Player two is: #{player_two.symbol}"
+
 counter = 0
-current_player = player_one
+board = Board.new
+judge = Judge.new
+winner = nil
+
+draw(board)
 
 loop do
-  puts "#{board_cells[0]} #{board_cells[1]} #{board_cells[2]}"
-  puts "#{board_cells[3]} #{board_cells[4]} #{board_cells[5]}"
-  puts "#{board_cells[6]} #{board_cells[7]} #{board_cells[8]}"
+  puts 'Player One. Is your turn. Please make a move (1-9):'
+  puts 'Invalid selection or occupied space' until player_one.make_move(gets.chomp.to_i, board)
 
-  puts "#{current_player}. Is your turn. Please make a move (1-9):"
-  puts 'Invalid selection or occupied space' until board_cells.include?(current_player_selection = gets.chomp.to_i)
-  puts "#{current_player} moves to #{current_player_selection}"
-
+  draw(board)
   counter += 1
-  current_player = current_player == player_one ? player_two : player_one
+  winner = judge.winner?(board, player_one) ? 'player one' : nil
+  break if counter == 9 || !winner.nil?
 
-  break if counter == 9 || current_player.winner?
+  puts 'Player Two. Is your turn. Please make a move (1-9):'
+  puts 'Invalid selection or occupied space' until player_two.make_move(gets.chomp.to_i, board)
+
+  draw(board)
+  counter += 1
+  winner = judge.winner?(board, player_two) ? 'player two' : nil
+  break unless winner.nil?
 end
 
-puts 'Player 1 wins'
+puts winner.nil? ? "It's a draw" : "#{winner} wins!!!"
