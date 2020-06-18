@@ -1,41 +1,74 @@
-# TIC TAC TOE Game using Ruby
+# Project Name
 
-In order to install the game in your machine you need to clone this project using the command `git clone https://github.com/Bismarck-GM/Microverse-tic-tac-toe.git`
+> One paragraph statement about the project.
 
-The game is build using the Ruby and In order to play the game You need to Setup Ruby and After doing that we need to run
-`bin/main.rb`
+![screenshot](./app_screenshot.png)
 
-There are some set of rules that you have to follow in order to play the game
-
-## Instructions
-
-- This game should be played with two players or you can act as both player
-- Every turns you have to choose the number from 1 to 9 according to the board
-- The first player pick wich symbol he/she want to use between 'X' and 'O'
-- The first person that matches the same pattern in a row, column or diagonal wins the game
-
-### At any Time you can stop the game by using `Ctr+C`
+Additional description about the project and its features.
 
 ## Built With
 
-- Ruby
+- Major languages,
+- frameworks,
+- technologies used
+
+## Live Demo
+
+[Live Demo Link](https://livedemo.com)
+
+
+## Getting Started
+
+**This is an example of how you may give instructions on setting up your project locally.**
+**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+### Setup
+
+### Install
+
+### Usage
+
+### Run tests
+
+### Deployment
+
+
 
 ## Authors
 
-👤 **Asiimwe Dismas**
-- Github: [@asiimwedismas](https://github.com/asiimwedismas)
-- Twitter: [@asiimwedismas](https://twitter.com/asiimwedismas)
-- Linkedin: [asiimwedismas](https://www.linkedin.com/in/asiimwedismas/)
+👤 **Author1**
 
-👤 **Gerónimo Morisot**
+- Github: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
 
-- Github: [@Bismarck-GM](https://github.com/Bismarck-GM)
-- Twitter: [@Rewritablee](https://twitter.com/Rewritablee)
-- Linkedin: [geronimomorisot](https://linkedin.com/in/geronimomorisot)
+👤 **Author2**
 
+- Github: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
 
 ## 🤝 Contributing
+
 Contributions, issues and feature requests are welcome!
 
+Feel free to check the [issues page](issues/).
+
 ## Show your support
+
 Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
