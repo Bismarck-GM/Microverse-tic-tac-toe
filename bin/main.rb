@@ -28,18 +28,18 @@ judge = Judge.new
 winner = nil
 
 loop do
+  board.draw
   puts 'Player One. Is your turn. Please make a move (1-9):'
   puts 'Invalid selection or occupied space' until player_one.make_move(gets.chomp.to_i, board)
 
-  board.draw
   counter += 1
   winner = judge.winner?(board, player_one) ? 'player one' : nil
   break if counter == 9 || !winner.nil?
 
+  board.draw
   puts 'Player Two. Is your turn. Please make a move (1-9):'
   puts 'Invalid selection or occupied space' until player_two.make_move(gets.chomp.to_i, board)
 
-  board.draw
   counter += 1
   winner = judge.winner?(board, player_two) ? 'player two' : nil
   break unless winner.nil?
