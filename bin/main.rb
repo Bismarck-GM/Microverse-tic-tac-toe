@@ -22,12 +22,14 @@ puts "Player one is: \"#{player_one}\". Player two is: \"#{player_two}\""
 
 counter = 0
 
+board_cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 loop do
   puts 'Player one. Is your turn. Please make a move (1-9):'
 
   player_one_selection = gets.chomp.to_i
 
-  if player_one_selection >= 1 && player_one_selection <= 9 # && Board.cell[player_one_position-1].is_a?(Integer)
+  if board_cells.include?(player_one_selection) ? true : false
     puts "#{player_one} moves to #{player_one_selection}"
   else
     puts 'Invalid move.' # Checks if the move is valid. If not it iterate again and puts 'Invalid move'.
@@ -42,7 +44,7 @@ loop do
 
   player_two_selection = gets.chomp.to_i
 
-  if player_two_selection >= 1 && player_two_selection <= 9 # && Board.cell[player_two_position-1].is_a?(Integer)
+  if board_cells.include?(player_two_selection) ? true : false
     puts "#{player_two} moves to #{player_two_selection}"
   else
     puts 'Invalid move.' # Checks if the move is valid. If not it iterate again and puts 'Invalid move'.
