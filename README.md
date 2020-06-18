@@ -23,6 +23,7 @@ There are some set of rules that you have to follow in order to play the game
 ## Authors
 
 👤 **Asiimwe Dismas**
+
 - Github: [@asiimwedismas](https://github.com/asiimwedismas)
 - Twitter: [@asiimwedismas](https://twitter.com/asiimwedismas)
 - Linkedin: [asiimwedismas](https://www.linkedin.com/in/asiimwedismas/)
@@ -34,7 +35,9 @@ There are some set of rules that you have to follow in order to play the game
 - Linkedin: [geronimomorisot](https://linkedin.com/in/geronimomorisot)
 
 ## 🤝 Contributing
+
 Contributions, issues and feature requests are welcome!
 
 ## Show your support
-Give a ⭐️ if you like this project!
+
+Give a ⭐️ if you like this project!!
