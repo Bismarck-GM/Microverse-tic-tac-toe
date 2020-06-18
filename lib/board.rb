@@ -11,5 +11,4 @@ class Board
   def update_board(symbol, move_command)
     @cells[move_command - 1] = symbol
   end
-
 end
