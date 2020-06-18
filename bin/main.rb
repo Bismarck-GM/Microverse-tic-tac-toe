@@ -18,24 +18,21 @@ puts "Player one is: #{player_one} and Player two is: #{player_two}"
 
 board_cells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 counter = 0
+current_player = player_one
 
 loop do
   puts "#{board_cells[0]} #{board_cells[1]} #{board_cells[2]}"
   puts "#{board_cells[3]} #{board_cells[4]} #{board_cells[5]}"
   puts "#{board_cells[6]} #{board_cells[7]} #{board_cells[8]}"
 
-  puts 'Player one. Is your turn. Please make a move (1-9):'
-  puts 'Invalid selection or occupied space' until board_cells.include?(player_one_selection = gets.chomp.to_i)
-  puts "#{player_one} moves to #{player_one_selection}"
+  puts "#{current_player}. Is your turn. Please make a move (1-9):"
+  puts 'Invalid selection or occupied space' until board_cells.include?(current_player_selection = gets.chomp.to_i)
+  puts "#{current_player} moves to #{current_player_selection}"
 
   counter += 1
-  break if counter == 9
+  current_player = current_player == player_one ? player_two : player_one
 
-  puts 'Player two. Is your turn. Please make a move (1-9):'
-  puts 'Invalid selection or occupied space' until board_cells.include?(player_two_selection = gets.chomp.to_i)
-  puts "#{player_two} moves to #{player_two_selection}"
-
-  counter += 1
+  break if counter == 9 || current_player.winner?
 end
 
 puts 'Player 1 wins'
