@@ -33,6 +33,7 @@ There are some set of rules that you have to follow in order to play the game
 - Twitter: [@Rewritablee](https://twitter.com/Rewritablee)
 - Linkedin: [geronimomorisot](https://linkedin.com/in/geronimomorisot)
 
+
 ## 🤝 Contributing
 Contributions, issues and feature requests are welcome!
 
